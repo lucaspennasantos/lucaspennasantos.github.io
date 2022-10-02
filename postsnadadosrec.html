@@ -41,27 +41,852 @@
             <main class="container"> <!-- Tutorial dados recuperação SNA -->
                 <article>
                     <h2>#TUTORIAL</h2> 
-                    <h4>Inserir dados de recuperação de anilhas na plataforma SNA a partir de uma planilha</h4>
+                    <h3>Inserir dados de recuperação de anilhas na plataforma SNA automaticamente a partir de uma planilha</h3>
                 </section>
 
                 <p></p>
                 
                 <section>
                     <p>
-                        Passo 1
-                    </p>
-                    
-                    <p>
-                        Passo 2 
-                    </p>
-                    
-                    <p>                        
-                        Passo 3 
-                    </p>
-                    
-                    <p>
-                       Passo 4 
+                    Primeira versão desta postagem: 01/10/22.
                     </p>
                 </section>
-                </article>
-                </main>
+
+                <section>
+                    <p> 
+                    Atualizado em: 02/10/22.
+                    </p>
+                </section>
+
+                <section>
+                <p></p>
+                  
+                </section>
+                <p></p>
+                <section>
+    
+                    
+<section>
+    <p></p>
+    </section>
+
+                    <p> 
+                ##########################################################################
+                    </p>
+                    
+                </section>
+                <section>
+                        <b>INTRODUÇÃO</b>
+                    
+                </section>
+                <section>
+    
+                    <p>
+                ##########################################################################
+                    </p>
+                </section>
+                <div id="conteudo">
+                    <div id="conteudo-principal">
+                        <p></p>
+                <section>
+- - - - - - - - - - - - - - - - - - - - - - - - - - - 
+</section>
+<section>
+    <p>
+À primeira vista, ao ler este tutorial, pode parecer complicado fazer tudo o que está sendo detalhado (instalar novos programas, rodar um código e executar cada passo), mas será mais rápido do que inserir os dados de, pelo menos, 100 anilhas manualmente. ;)
+    </p>
+</section>
+<section>
+<p>
+</p>
+</section>
+<section>
+    <p>
+    Para inserir os dados no SNA de forma automática, vamos precisar de um código. A boa notícia é que deixei essa parte pronta.  
+Mas, para este código funcionar é necessário realizar alguns procedimentos anteriores, os quais seguem detalhados abaixo neste tutorial. 
+    </p>
+</section>
+<section>
+    - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+</section>
+
+<section>
+    <p></p>
+</section>
+
+<section>
+    <p>
+<b>Sobre o SNA</b>: O Sistema Nacional de Anilhamento (SNA) é gerido pelo Centro Nacional de Pesquisa e Conservação de Aves Silvestres (CEMAVE/ICMBio) e é utilizado nacionalmente como um banco de dados central para as informações de aves anilhadas, ou seja, indivíduos de vida livre que receberam marcadores para serem estudados de alguma forma. 
+    </p>
+</section>
+
+<section>
+    <p></p>
+</section>
+
+<section>
+    <p>
+<b>Sobre as anilhas</b>:
+    </p>
+    <p>
+- Estes marcadores são compostos por anilhas metálicas, anéis circulares que são colocadas nos membros inferiores das aves, na região do tarso ou tibiotarso. Cada anilha é única, com um código alfanumérico exclusivo para cada indivíduo. 
+    </p>
+    <p>
+- Outro detalhe importante é com relação ao material da anilha. Espécies diferentes de aves possuem diâmetros diferentes nos membros, então o anel circular é calculado com a medida e o peso corretos para cada uma delas. As marcações são realizdas por anilhadores autorizados, vinculados por projetos de pesquisa ou de educação. 
+    </p>
+    <p>
+- Este procedimento é muito importante para a obter diversas informações sobre as espécies e populações estudadas. É possível, por exemplo, realizar diversas análises sobre parâmetros populacionais, estimativa de área de vida, modelos de ocupação, entre outros. 
+    </p>
+</section>
+
+<section>
+    <p></p>
+</section>
+
+
+<section>
+    <p>
+<b>Sobre o input de dados</b>:
+    </p>
+    <section>
+    <p>
+    - Podemos dividir os dados de anilhamento em duas categorias: 
+    </p>
+    </section>
+    <p>
+1) Capturas: anilhas recém inseridas nas aves. Ao capturar uma ave o anilhador vai identificar este indivíduo com uma nova anilha que possui um código específico (por exemplo: O55567, N33345, U22210). Este dado então será inserido como um novo cadastro na plataforma SNA pelo anilhador responsável.
+</p>
+<p>
+2) Recapturas: anilhas verificadas pela segunda, terceira, quarta, "n" vez. Se ao capturar uma ave, o anilhador verificar que já existe uma anilha presente neste indivíduo, este dado é considerado uma recaptura. Portanto, esta informação é inserida no SNA como um dado de recaptura. 
+</p>
+</section>
+<section>
+    <p></p>
+<p>
+- No primeiro caso, apenas o anilhador responsável pelas anilhas ou projeto vinculado no SNA consegue fazer o input dos dados, com login de cadastro e situação ativa na plataforma SNA.
+Porém, para as recapturas, a inserção de dados é aberta na plataforma online. Basta acessar http://www.ibama.gov.br/sna/recuperacao.php e, caso você tenha achado alguma anilha, pode inserir manualmente esta informação, sem a necessidade de realizar cadastro na plataforma. 
+</p>
+</section>
+<section>
+<p>
+- É isso mesmo, que você leu anteriormente: --- manualmente ---
+</p>
+</section>
+<section>
+<p>
+E se for o caso de trabalharmos com um projeto que temos a recuperação de 10, 50, 100 ou até 1.000 anilhas??
+Isso aconteceu comigo e por isso desenvolvi este tutorial para automatizar a inserção de dados, ou seja, o input, na plataforma SNA. 
+</p>
+</section>
+<section>
+<p>
+Dessa forma, compartilho em formato de post (pelo meu GitHub Page: lucaspennasantos.github.io) a forma de inserir os dados de forma automática no SNA. Espero que ajude anilhadores(as) quando precisarem.
+Para inserir os dados na plataforma, trabalhei com a linguagem de programação Python, sendo que o script está depositado no seguinte repositório: https://github.com/lucaspennasantos/sna_dados_rec/blob/main/ImportarDadosSNA.ipynb. 
+</p>
+</section>
+<section>
+    <p></p>
+    <section>
+    <p>
+Confira o passo a passo abaixo:
+</p>
+</section>
+
+<section>
+<p></p>
+</section>
+
+<section>
+<p></p>
+</section>
+
+<section>
+<p></p>
+</section>
+
+<section>
+<p></p>
+</section>
+    
+<section>
+<p></p>
+</section>
+
+
+<section>
+<p>
+##########################################################################
+</p>
+</section>
+
+<section>
+<b>Passo 1: Baixe a planilha padrão para que o código possa funcionar corretamente</b>
+</section>
+
+<section>
+<p>
+##########################################################################
+</p>
+</section>
+
+
+<section>
+<p></p>
+</section>
+
+<section>
+<p>    
+- Baixe a planilha padronizada em: LINK LINK LINK LINK
+</p>
+</section>
+
+<section>
+<p></p>
+</section>
+
+<section>
+<p>    
+Informação: se você tem uma planilha já estabelecida com os seus dados coletados, você deverá adaptar para a planilha deste tutorial. Pode parecer trabalhoso, mas na verdade, são pequenos ajustes a se fazer. 
+
+Isso deve ser feito, pois em cada campo (Letra, Numeração, Data exata, etc.) a ser preechido no site http://www.ibama.gov.br/sna/recuperacao.php há um código que corresponde à uma coluna específica na planilha padrão. Para rodar corretamente estes termos não podem sofrer alteração.
+Inclusive, você pode trabalhar com o seu próprio banco de dados e adaptar ao formato padrão que está apresentando nas duas primeiras linhas (dados fictícios) presentes como exemplo neste arquivo. 
+</p>
+</section>
+
+<section>
+<p></p>
+</section>
+
+<section>
+<p></p>
+</section>
+
+<section>
+<p></p>
+</section>
+
+<section>
+<p></p>
+</section>
+    
+<section>
+<p></p>
+</section>
+
+
+<section>
+    <p>
+##########################################################################
+</p>
+</section>
+    
+<section>
+    <b>Passo 2: Instalar a plataforma Anaconda </b>
+</section>
+
+
+<section>
+    <p>
+##########################################################################
+</p>
+</section>
+
+<section>
+    <p></p>
+</section>
+
+<section>
+    <p>
+- Acesse https://www.anaconda.com/ e clique em download (verifique a opção mais adequada entre 64 ou 32bits no sistema do seu pc).
+</p>
+</section>
+
+<section>
+    <p>
+- O Anaconda nao é muito leve, então caso o seu PC for muito antigo o programa nao vai rodar tão bem. Existe a opção online que é o Google Colab, mas a conexão deve ser boa. As instruções deste tutorial serão focadas para o trabalho no PC, e não online.
+</p>
+</section>
+
+<section>
+    <p>
+- Durante a instalação, marque: 
+</p>
+</section>
+
+<section>
+    <p>
+     1ª caixa de diálogo: Just Me (recommended) > next
+</p>
+</section>
+
+<section>
+    <p>
+     2ª caixa de diálogo: Desabilite as duas opções > next > next > next
+</p>
+</section>	
+
+<section>
+    <p>
+- Verifique se o Anaconda instalou: na barra de pesquisa do seu PC escreva "prompt". Deverá aparecer como resultado o 'Prompt de Comando' do seu pc e o 'Anaconda Prompt' logo abaixo. 
+</p>
+</section>
+
+<section>
+    <p>
+- Outra opção para verificar é digitar "Jupyter" e ver se apareceu "Jupyter Notebook" na lista de resultados. Apenas verifique isto e siga os próximos passos.
+</p>
+</section>
+
+<section>
+    <p>
+- Caso não apareça estas duas opções, desinstale e instale de novo o Anaconda. Porém desta vez, selecione "All users" na 1ª caixa de diálogo durante a instalação
+</p>
+</section>
+
+<section>
+    <p>
+- Por último, abra o 'Anaconda Prompt'. Você pode verificar que estará escrito o nome de um diretório (por exemplo: C:/Users/nome) e você não vai conseguir apagar estes caracteres. Em frente do nome deste diretório digite a seguinte frase: pip install selenium
+</p>
+</section>
+
+<section>
+    <p>
+- Pressione enter e o prompt vai começar a escrever sozinho. Quando acabar deverá aparecer o mesmo nome do diretório anterior novamente.
+</p>
+</section>
+
+
+<section>
+    <p></p>
+</section>
+
+
+<section>
+    <p>
+Informação: a frase "pip install selenium" é um comando para que o Anaconda instale o pacote de códigos selenium, o qual vamos utilizar no script no passo 4.
+</p>
+</section>
+
+<section>
+    <p></p>
+</section>
+
+<section>
+<p></p>
+</section>
+
+<section>
+<p></p>
+</section>
+
+<section>
+<p></p>
+</section>
+
+<section>
+<p></p>
+</section>
+    
+<section>
+<p></p>
+</section>
+
+
+<section>
+    <p>
+##########################################################################
+</p>
+</section>
+
+<section>
+    
+<b>Passo 3: Baixar o webdriver correto </b>
+
+</section>
+
+<section>
+    <p>
+##########################################################################
+</p>
+</section>
+
+<section>
+    <p>
+    </p>
+</section>
+
+<section>
+    <p>
+- Confira no seu PC qual é o seu navegador de internet padrão (Chrome, Firefox, Edge, etc.) em Configurações > Aplicativos Padrão > Navegador da Web. 
+</p>
+</section>
+
+<section>
+    <p>
+AVISO: As instruções deste tutorial são focadas para o Chrome e sugiro que você utilize este navegador para seguir os próximos passos. 
+</p>
+</section>
+
+<section>
+    <p>
+- O nome do webdriver para o Chrome se chama ChromeDriver (No caso do Firefox, o webdriver se chama geckodriver).
+</p>
+</section>
+
+<section>
+    <p>
+- No seu navegador vá em: ::: > Ajuda > Sobre o Google Chrome. Verifique qual é a versão do seu Google Chrome (vai estar escrito por exemplo: "Versão 105.0.5195.127 (Versão oficial) 64 bits").
+</p>
+</section>
+
+<section>
+    <p>
+- Agora devemos encontrar o ChromeDriver compatível com a sua versão do Google. Para isso, utilizei este site (https://chromedriver.chromium.org/downloads) para encontrar o webdriver do meu navegador, mas caso não encontre pelo link, basta procurar no Google e achar a versão compatível com a sua. 
+</p>
+</section>
+
+<section>
+    <p>
+- A partir do download feito, abra através da barra de pesquisa do seu PC o 'Anaconda Prompt'. Com esta caixa aberta, confira o diretório que está escrito no prompt (por exemplo: C:\Users\nome). 
+</p>
+</section>
+
+<section>
+    <p>
+- Pelo explorador do seu pc vá até este diretório, abra a pasta "anaconda" (geralmente com o nome "anaconda3"). Agora abra a pasta zipada do ChromeDriver baixado (provavelmente ela estará na pasta "Downloads"), mova o arquivo .exe para a pasta do anaconda (extrair o arquivo). Caso já exista algum arquivo com o mesmo nome, você pode substituir pelo atual. 
+</p>
+</section>
+
+<section>
+    <p>
+- Feito isso, o seu PC vai reconhecer a linguagem de códigos (selenium) para o input dos dados na plataforma SNA.
+</p>
+</section>
+
+
+<section>
+    <p></p>
+</section>
+
+<section>
+<p></p>
+</section>
+
+<section>
+<p></p>
+</section>
+
+<section>
+<p></p>
+</section>
+
+<section>
+<p></p>
+</section>
+    
+<section>
+<p></p>
+</section>
+
+
+<section>
+    <p>
+##########################################################################
+</p>
+</section>
+
+<section>
+<b>Passo 4: Execute o Jupyter</b>
+</p>
+</section>
+
+<section>
+    <p>
+##########################################################################
+</p>
+</section>
+
+<section>
+    <p>
+    </p>
+</section>
+
+<section>
+    <p>
+- Digite Jupyter na barra de pesquisa do seu PC e abra.
+</p>
+</section>
+
+<section>
+    <p>
+- Ao clicar, vai abrir um prompt de comando do Jupyter e automaticamente vai abrir também a interface do Jupyter no seu navegador padrão (Chrome, Firefox etc). Caso não abra, copie e cole a URL q está sendo mostrada na última linha do código na tela do prompt do Jupyter (Figura X).
+</p>
+</section>
+
+<section>
+    <p>
+- Enquanto estiver executando este trabalho, não feche essa tela de prompt do Jupyter, pois ele funciona a partir dela. Pode minimizar.
+</p>
+</section>
+
+<section>
+    <p>
+- Ao abrir o Jupyter no seu navegador de internet, você poderá acessar as pastas do seu computador (pastas do usuário) através deste programa. 
+</p>
+</section>
+
+<section>
+    <p>
+- No Jupyter, vá até o canto superior à direita e clique no botão: New > Folder. Sugiro que você crie uma pasta geral com o nome, por exemplo, de "Projetos" e dentro desta, outra com nome deste trabalho atual "dados_sna". 
+</p>
+</section>
+
+<section>
+    <p>
+Dica: tente sempre usar o underline "_" para separar as palavras no nome de uma pasta.
+</p>
+</section>
+
+<section>
+    <p>
+- Na pasta escolhida, abra um novo arquivo clicando em New > Python 3 (este arquivo é chamado também de Notebook, ou seja, um arquivo que você digita o seu código). Automaticamente irá abrir uma nova página do Jupyter no seu navegador, sendo este um notebook para escrevermos o nosso código de input.
+</p>
+</section>
+
+
+<section>
+    <p></p>
+</section>
+
+<section>
+<p></p>
+</section>
+
+<section>
+<p></p>
+</section>
+
+<section>
+<p></p>
+</section>
+
+<section>
+<p></p>
+</section>
+    
+<section>
+<p></p>
+</section>
+
+
+<section>
+    <p>
+##########################################################################
+</p>
+</section>
+
+<section>
+<b>Passo 5: Vamos colocar em prática o código para input dos dados</b>
+</section>
+
+<section>
+    <p>
+##########################################################################
+</p>
+</section>
+
+<section>
+    <p>
+    </p>
+</section>
+
+<section>
+    <p>
+- Você deverá colocar a planilha padrão (ver passo 1) com os dados que você coletou na MESMA pasta criada no Jupyter, junto com o arquivo Python (.ipynb).
+</p>
+</section>
+
+<section>
+    <p>
+- Na página aberta do Jupyter (que está no seu navegador de internet), copie e cole o código abaixo para a única caixa de edição que está aberta.
+</p>
+</section>
+
+<section>
+    <p>
+    </p>
+</section>
+
+<pre> <code>
+#----------------------------------------------------------------------------
+from selenium import webdriver
+from selenium.webdriver.support.ui import Select
+from selenium.webdriver.common.alert import Alert
+
+
+import pandas as pd
+tabela = pd.read_excel("planilha.xlsx")
+
+for i, numera in enumerate(tabela["Numeraçao"]):
+    letra = tabela.loc[i, "Letra"]
+    Data = tabela.loc[i, "Data exata"]
+    Local = tabela.loc[i, "Local no mar"]
+    Localidade = tabela.loc[i, "Localidade"]
+    Informe = tabela.loc[i, "Informe ponto referencia"]
+    Voce = tabela.loc[i, "Voce sabe coordenadas"]
+    LatGra = tabela.loc[i, "Lat Graus"]
+    LatMin = tabela.loc[i, "Lat Minutos"]
+    LatSeg = tabela.loc[i, "Lat Segundos"]
+    LongGra = tabela.loc[i, "Long Graus"]
+    LongMin = tabela.loc[i, "Long Minutos"]
+    LongSeg = tabela.loc[i, "Long Segundos"]
+    InformeOutrosInstrumentos = tabela.loc[i, "Informe os outros instrumentos"]
+    Observa = tabela.loc[i, "Observações"]
+    nome = tabela.loc[i, "Nome"] 
+    email = tabela.loc[i, "Email"]
+    
+    
+    navegador = webdriver.Chrome()    
+    navegador.get("http://ibama.gov.br/sna/recuperacao.php")
+    
+    
+    #########################################################################
+    #1ª Página: Dados do Encontro
+    
+    #Letra
+    navegador.find_element("xpath",'//*[@id="cod_anilha"]').send_keys(letra)
+
+    #Numeração
+    navegador.find_element("xpath",'//*[@id="num_anilha"]').send_keys(numera)
+
+    #Data exata
+    navegador.find_element("xpath",'//*[@id="dat_recuperacao"]').send_keys(Data)
+
+    #Localidade
+    navegador.find_element("xpath",'//*[@id="des_localidade"]').send_keys(Localidade)
+
+    #Informe ponto de referência
+    navegador.find_element("xpath",'//*[@id="des_ponto_referencia"]').send_keys(Informe)
+
+    #País
+    x = navegador.find_element("xpath",'//*[@id="cod_pais"]')
+    drop = Select(x)
+    drop.select_by_visible_text("Brasil")
+
+    #Estado
+    x = navegador.find_element("xpath",'//*[@id="cod_uf"]')
+    drop = Select(x)
+    drop.select_by_visible_text("PERNAMBUCO")
+
+    #Município
+    from time import sleep 
+    sleep(11)              #Add os segundos necessários para o tempo de reação no SNA
+    x = navegador.find_element("xpath",'//*[@id="cod_municipio"]')
+    drop = Select(x)
+    drop.select_by_visible_text("FERNANDO DE NORONHA")
+
+    #lat Graus
+    navegador.find_element("xpath",'//*[@id="latitude_grau"]').send_keys(str(LatGra))
+
+    #Lat Minutos
+    navegador.find_element("xpath",'//*[@id="latitude_min"]').send_keys(str(LatMin))
+
+    #Lat Segundos
+    navegador.find_element("xpath",'//*[@id="latitude_seg"]').send_keys(str(LatSeg))
+
+    #lat Direção
+    x = navegador.find_element("xpath",'//*[@id="latitude_dir"]')
+    drop = Select(x)
+    drop.select_by_visible_text("Sul (S)")
+
+    #Long Graus
+    navegador.find_element("xpath",'//*[@id="longitude_grau"]').send_keys(str(LongGra))
+
+    #Long Minutos
+    navegador.find_element("xpath",'//*[@id="longitude_min"]').send_keys(str(LongMin))
+
+    #long Segundos
+    navegador.find_element("xpath",'//*[@id="longitude_seg"]').send_keys(str(LongSeg))
+
+    #long Direção
+    x = navegador.find_element("xpath",'//*[@id="longitude_dir"]')
+    drop = Select(x)
+    drop.select_by_visible_text("Oeste (W)")
+
+    #Informe o instrumento
+    x = navegador.find_element("xpath",'//*[@id="seq_tipo_encontro_ave"]')
+    drop = Select(x)
+    drop.select_by_visible_text("Outras")
+
+    #Informe outros instrumentos
+    navegador.find_element("xpath",'//*[@id="des_obtencao"]').send_keys(InformeOutrosInstrumentos)
+
+    #Qual o estado atual da ave
+    x = navegador.find_element("xpath",'//*[@id="seq_tipo_situacao_ave"]')
+    drop = Select(x)
+    drop.select_by_visible_text("Liberada Viva na natureza")
+
+    #A anilha foi retirada da ave
+    navegador.find_element("xpath",'//*[@id="sit_anilha_2"]').click()
+
+    #Observações
+    navegador.find_element("xpath",'//*[@id="obs_recuperacao"]').send_keys(Observa)
+
+    
+    #
+    #GRAVAR
+    #
+    navegador.find_element("xpath",'//*[@id="btnGravarRecuperacao"]').click()
+    sleep(1)
+    #
+    
+    #Confirmação de sucesso (1ª página: Dados do Encontro)
+    alert = Alert(navegador)
+    alert.accept()
+    
+    #########################################################################
+    
+    
+    
+    #########################################################################
+    #2ª página: Quem encontrou?
+    
+    #Observações
+    navegador.find_element("xpath",'//*[@id="nom_recuperador"]').send_keys(nome)
+    
+    #Os outros campos não são obrigatórios
+    
+    #País
+    x = navegador.find_element("xpath",'//*[@id="cod_pais_recuperador"]')
+    drop = Select(x)
+    drop.select_by_visible_text("Brasil")
+    
+    #Estado
+    x = navegador.find_element("xpath",'//*[@id="cod_uf_recuperador"]')
+    drop = Select(x)
+    drop.select_by_visible_text("PERNAMBUCO")
+
+    #Município
+    from time import sleep 
+    sleep(12)              #Add os segundos necessários para o tempo de reação no SNA
+    x = navegador.find_element("xpath",'//*[@id="cod_municipio_recuperador"]')
+    drop = Select(x)
+    drop.select_by_visible_text("FERNANDO DE NORONHA")
+    
+    #Observações
+    navegador.find_element("xpath",'//*[@id="des_email"]').send_keys(email)
+    
+    
+    #
+    #CONFIRMAR
+    #
+    navegador.find_element("xpath",'//*[@id="btnConfirmar"]').click()
+    sleep(1)
+    #
+    
+    
+    #Alerta de confirmação: "Deseja realmente concluir o preenchimento dos dados?"
+    alert = Alert(navegador)
+    alert.accept()
+    
+    #Dados gravados com sucesso
+    #Fechar aba do 'Certificado de agradecimento'
+    navegador.find_element("xpath",'//*[@id="formDinAreaTitulo"]/td/table/tbody/tr/td[2]/img').click()
+    
+    #########################################################################
+
+#----------------------------------------------------------------------------
+</code></pre>
+
+
+
+
+    <section>
+        <p>
+- Clique em Run. Aguarde um pouco e veja que irá abrir automaticamente uma nova janela de navegador, preenchendo automaticamente os dados de recuperação no site do SNA. Deixe rodando e pronto!
+</p>
+</section>
+
+<section>
+    <p>
+    </p>
+</section>
+
+<section>
+    <p>
+Observações: 
+</p>
+</section>
+
+<section>
+    <p>
+- Você pode fazer outras tarefas no seu PC enquanto o código está rodando, mas cuidado com tarefas que requisitam muito do sistema. 
+</p>
+</section>
+
+<section>
+    <p>
+- Verifique ao longo do tempo a janela do Jupyter. Pode ser que aconteça algum erro. 
+</p>
+</section>
+
+<section>
+    <p>
+- Erros mais comuns (e suas soluções): 
+
+1) Webdriver não compatível com o seu navegador ou não atualizado na pasta do anaconda (solução: veja o passo 3 e repita cada etapa); 
+2) Informações na planilha de dados não padronizada com o arquivo deste tutorial (solução: identifique o nome da coluna que está errada. Você pode fazer isso conferindo todas as colunas do arquivo .xlsx ou confira se há alguma coluna identificada na mensagem de erro do Jupyter)
+3) Conexão ruim ..... 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section>
+    <p></p>
+    </section>
+
+
+    <section>
+        <p></p>
+        </section>
+
+        
+<section>
+    <p></p>
+    </section>
+
+    
+<section>
+    <p></p>
+    </section>
+
+    
+<section>
+    <p></p>
+    </section>
+
+
+
+
+
+</div>
+</div>
+</section>
+</article>
+</main>
+</body>
+
+                 
