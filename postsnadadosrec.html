@@ -20,7 +20,7 @@
     <body> <!--###################################################################-->
         <header>
             <div class="Cabeçalho">
-                <a href="https://lucaspennasantos.github.io" class="branch"><img src="https://i1.rgstatic.net/ii/profile.image/909153144934406-1593770409923_Q128/Lucas-Santos-30.jpg" alt="Minha logo" title="Perfil"></a>
+                <a href="https://lucaspennasantos.github.io" class="branch"><img src="https://i1.rgstatic.net/ii/profile.image/909153144934406-1593770409923_Q128/Lucas-Santos-30.jpg" alt="Perfil" title="Perfil"></a>
                 <nav class="menu">
                     <ul>
                        <!--  <li><a class="menu-link" href="index.html">Início</a></li>         -->
@@ -54,7 +54,7 @@
 
                 <section>
                     <p> 
-                    Atualizado em: 02/10/22.
+                    Atualizado em: 04/10/22.
                     </p>
                 </section>
 
@@ -110,13 +110,28 @@ Mas, para este código funcionar é necessário realizar alguns procedimentos an
     - - - - - - - - - - - - - - - - - - - - - - - - - - - 
 </section>
 
+
 <section>
     <p></p>
 </section>
 
 <section>
     <p>
-<b>Sobre o SNA</b>: O Sistema Nacional de Anilhamento (SNA) é gerido pelo Centro Nacional de Pesquisa e Conservação de Aves Silvestres (CEMAVE/ICMBio) e é utilizado nacionalmente como um banco de dados central para as informações de aves anilhadas, ou seja, indivíduos de vida livre que receberam marcadores para serem estudados de alguma forma. 
+        <center>
+        <img id="print1" src="./img/postsnadadosrec_print1_sna.jpg" alt="Site SNA" width="800px"/>
+        </center>
+    </p>
+</section>
+
+<section>
+    <p></p>
+</section>
+
+
+
+<section>
+    <p>
+<b>Sobre o SNA</b>: O <a href="http://www.ibama.gov.br/sna/recuperacao.php" alt="plataforma SNA" style="color: #3d87ef" target="_blank" rel="noopener noreferrer">Sistema Nacional de Anilhamento (SNA)</a> é gerido pelo Centro Nacional de Pesquisa e Conservação de Aves Silvestres (CEMAVE/ICMBio) e é utilizado nacionalmente como um banco de dados central para as informações de aves anilhadas, ou seja, indivíduos de vida livre que receberam marcadores para serem estudados de alguma forma. 
     </p>
 </section>
 
@@ -164,7 +179,7 @@ Mas, para este código funcionar é necessário realizar alguns procedimentos an
     <p></p>
 <p>
 - No primeiro caso, apenas o anilhador responsável pelas anilhas ou projeto vinculado no SNA consegue fazer o input dos dados, com login de cadastro e situação ativa na plataforma SNA.
-Porém, para as recapturas, a inserção de dados é aberta na plataforma online. Basta acessar http://www.ibama.gov.br/sna/recuperacao.php e, caso você tenha achado alguma anilha, pode inserir manualmente esta informação, sem a necessidade de realizar cadastro na plataforma. 
+Porém, para as recapturas, a inserção de dados é aberta na plataforma online. Basta acessar <a href="http://www.ibama.gov.br/sna/recuperacao.php" alt="plataforma SNA" style="color: #3d87ef" target="_blank" rel="noopener noreferrer">http://www.ibama.gov.br/sna/recuperacao.php</a> e, caso você tenha achado alguma anilha, pode inserir manualmente esta informação, sem a necessidade de realizar cadastro na plataforma. 
 </p>
 </section>
 <section>
@@ -180,8 +195,13 @@ Isso aconteceu comigo e por isso desenvolvi este tutorial para automatizar a ins
 </section>
 <section>
 <p>
-Dessa forma, compartilho em formato de post (pelo meu GitHub Page: lucaspennasantos.github.io) a forma de inserir os dados de forma automática no SNA. Espero que ajude anilhadores(as) quando precisarem.
-Para inserir os dados na plataforma, trabalhei com a linguagem de programação Python, sendo que o script está depositado no seguinte repositório: https://github.com/lucaspennasantos/sna_dados_rec/blob/main/ImportarDadosSNA.ipynb. 
+Dessa forma, compartilho em formato de post (pelo meu GitHub Page: <a href="http://lucaspennasantos.github.io" alt="GitHub Lucas Penna" style="color: #3d87ef" target="_blank" rel="noopener noreferrer">lucaspennasantos.github.io</a>) a forma de inserir os dados de forma automática no SNA. Espero que ajude anilhadores(as) quando precisarem. 🙂
+</p>
+<section>
+
+<section>
+    <p>
+Para inserir os dados na plataforma, trabalhei com a linguagem de programação Python, sendo que o script está depositado no seguinte repositório: <a href="https://github.com/lucaspennasantos/sna_dados_rec/blob/main/sna_dados_rec.ipynb" alt="Repositório arquivo Python" style="color: #3d87ef" target="_blank" rel="noopener noreferrer">https://github.com/lucaspennasantos/sna_dados_rec/blob/main/sna_dados_rec.ipynb</a>. 
 </p>
 </section>
 <section>
@@ -233,10 +253,10 @@ Confira o passo a passo abaixo:
 <section>
 <p></p>
 </section>
-
+                    
 <section>
 <p>    
-- Baixe a planilha padronizada em: LINK LINK LINK LINK
+- Baixe a <a href="https://github.com/lucaspennasantos/sna_dados_rec/raw/main/postsnadadosrec_planilha.xlsx" alt="Planilha padrão" style="color: #3d87ef" download>planilha padrão</a>.
 </p>
 </section>
 
@@ -246,12 +266,30 @@ Confira o passo a passo abaixo:
 
 <section>
 <p>    
-Informação: se você tem uma planilha já estabelecida com os seus dados coletados, você deverá adaptar para a planilha deste tutorial. Pode parecer trabalhoso, mas na verdade, são pequenos ajustes a se fazer. 
+Informação: se você tem uma planilha já estabelecida com os seus dados coletados, você deverá adaptar para a planilha que deixei pronto para este tutorial. Pode parecer trabalhoso, mas na verdade, são pequenos ajustes a se fazer. 
 
-Isso deve ser feito, pois em cada campo (Letra, Numeração, Data exata, etc.) a ser preechido no site http://www.ibama.gov.br/sna/recuperacao.php há um código que corresponde à uma coluna específica na planilha padrão. Para rodar corretamente estes termos não podem sofrer alteração.
-Inclusive, você pode trabalhar com o seu próprio banco de dados e adaptar ao formato padrão que está apresentando nas duas primeiras linhas (dados fictícios) presentes como exemplo neste arquivo. 
+Isso deve ser feito, pois em cada campo (Letra, Numeração, Data exata, etc.) a ser preechido no site SNA há um código que corresponde à uma coluna específica na planilha padrão. Para rodar corretamente o nome do arquivo e os nomes destes termos não podem sofrer alteração.
+Inclusive, você pode trabalhar com o seu próprio banco de dados e adaptar ao formato padrão (mudar os nomes das colunas), deixando os seus dados semelahntes ao que estão sendo apresentando nas duas primeiras linhas (dados fictícios) como exemplo neste arquivo. 
 </p>
 </section>
+
+
+<section>
+    <p></p>
+</section>
+
+<section>
+    <p>
+        <center>
+        <img id="print1" src="./img/postsnadadosrec_print2_planilha.jpg" alt="Planilha padrão" width="930px"/>
+        </center>
+    </p>
+</section>
+
+<section>
+    <p></p>
+</section>
+
 
 <section>
 <p></p>
@@ -297,7 +335,7 @@ Inclusive, você pode trabalhar com o seu próprio banco de dados e adaptar ao f
 
 <section>
     <p>
-- Acesse https://www.anaconda.com/ e clique em download (verifique a opção mais adequada entre 64 ou 32bits no sistema do seu pc).
+- Acesse <a href="https://www.anaconda.com/" alt="Site Anaconda" style="color: #3d87ef" target="_blank" rel="noopener noreferrer">https://www.anaconda.com/</a> e clique em download (verifique a opção mais adequada entre 64 ou 32bits no sistema do seu pc).
 </p>
 </section>
 
@@ -337,6 +375,30 @@ Inclusive, você pode trabalhar com o seu próprio banco de dados e adaptar ao f
 </p>
 </section>
 
+
+
+<section>
+    <p></p>
+</section>
+
+<section>
+    <p>
+        <center>
+        <img id="print1" src="./img/postsnadadosrec_print3_iniciar anaconda.jpg" alt="Barra de pesquisa" width="250px"/>
+        </center>
+    </p>
+</section>
+
+<section>
+    <p></p>
+</section>
+
+
+<section>
+    <p></p>
+</section>
+
+
 <section>
     <p>
 - Caso não apareça estas duas opções, desinstale e instale de novo o Anaconda. Porém desta vez, selecione "All users" na 1ª caixa de diálogo durante a instalação
@@ -345,7 +407,7 @@ Inclusive, você pode trabalhar com o seu próprio banco de dados e adaptar ao f
 
 <section>
     <p>
-- Por último, abra o 'Anaconda Prompt'. Você pode verificar que estará escrito o nome de um diretório (por exemplo: C:/Users/nome) e você não vai conseguir apagar estes caracteres. Em frente do nome deste diretório digite a seguinte frase: pip install selenium
+- Por último, abra o 'Anaconda Prompt'. Você pode verificar que estará escrito o nome de um diretório (por exemplo: C:/Users/nome) e você não vai conseguir apagar estes caracteres. Em frente do nome deste diretório digite a seguinte frase: <code id="pip">pip install selenium</code>
 </p>
 </section>
 
@@ -363,9 +425,30 @@ Inclusive, você pode trabalhar com o seu próprio banco de dados e adaptar ao f
 
 <section>
     <p>
-Informação: a frase "pip install selenium" é um comando para que o Anaconda instale o pacote de códigos selenium, o qual vamos utilizar no script no passo 4.
+Informação: a frase <code id="pip">pip install selenium</code> é um comando para que o Anaconda instale o pacote de códigos selenium, o qual vamos utilizar no script no passo 4.
 </p>
 </section>
+
+
+
+
+<section>
+    <p></p>
+</section>
+
+<section>
+    <p>
+        <center>
+        <img id="print1" src="./img/postsnadadosrec_print4_anaconda prompt.jpg" alt="Anaconda Prompt" width="700px"/>
+        </center>
+    </p>
+</section>
+
+<section>
+    <p></p>
+</section>
+
+
 
 <section>
     <p></p>
@@ -435,13 +518,33 @@ AVISO: As instruções deste tutorial são focadas para o Chrome e sugiro que vo
 
 <section>
     <p>
-- No seu navegador vá em: ::: > Ajuda > Sobre o Google Chrome. Verifique qual é a versão do seu Google Chrome (vai estar escrito por exemplo: "Versão 105.0.5195.127 (Versão oficial) 64 bits").
+- No seu navegador clique no botão superior à direita de 'Três pontinhos' > Ajuda > Sobre o Google Chrome. Verifique qual é a versão do seu Google Chrome (vai estar escrito por exemplo: "Versão 105.0.5195.127 (Versão oficial) 64 bits").
 </p>
+</section>
+
+
+
+<section>
+    <p></p>
 </section>
 
 <section>
     <p>
-- Agora devemos encontrar o ChromeDriver compatível com a sua versão do Google. Para isso, utilizei este site (https://chromedriver.chromium.org/downloads) para encontrar o webdriver do meu navegador, mas caso não encontre pelo link, basta procurar no Google e achar a versão compatível com a sua. 
+        <center>
+        <img id="print1" src="./img/postsnadadosrec_print5_chrome.jpg" alt="Versão Chrome" width="600px"/>
+        </center>
+    </p>
+</section>
+
+<section>
+    <p></p>
+</section>
+
+
+
+<section>
+    <p>
+- Agora devemos encontrar o ChromeDriver compatível com a sua versão do Google. Para isso, utilizei este site (<a href="https://chromedriver.chromium.org/downloads" alt="ChromeDriver" style="color: #3d87ef" target="_blank" rel="noopener noreferrer">https://chromedriver.chromium.org/downloads</a>) para encontrar o webdriver do meu navegador, mas caso não encontre pelo link, basta procurar no Google e achar a versão compatível com a sua. 
 </p>
 </section>
 
@@ -453,9 +556,29 @@ AVISO: As instruções deste tutorial são focadas para o Chrome e sugiro que vo
 
 <section>
     <p>
-- Pelo explorador do seu pc vá até este diretório, abra a pasta "anaconda" (geralmente com o nome "anaconda3"). Agora abra a pasta zipada do ChromeDriver baixado (provavelmente ela estará na pasta "Downloads"), mova o arquivo .exe para a pasta do anaconda (extrair o arquivo). Caso já exista algum arquivo com o mesmo nome, você pode substituir pelo atual. 
+- Pelo explorador do seu pc, vá até este diretório, abra a pasta "anaconda" (geralmente com o nome "anaconda3"). Agora abra a pasta zipada do ChromeDriver baixado (provavelmente ela estará na pasta "Downloads"), mova o arquivo .exe para a pasta do anaconda (extrair o arquivo). Caso já exista algum arquivo com o mesmo nome, você pode substituir pelo atual. 
 </p>
 </section>
+
+
+
+<section>
+    <p></p>
+</section>
+
+<section>
+    <p>
+        <center>
+        <img id="print1" src="./img/postsnadadosrec_print6_webdriver pasta.jpg" alt="Webdriver na pasta" width="600px"/>
+        </center>
+    </p>
+</section>
+
+<section>
+    <p></p>
+</section>
+
+
 
 <section>
     <p>
@@ -523,6 +646,26 @@ AVISO: As instruções deste tutorial são focadas para o Chrome e sugiro que vo
 </p>
 </section>
 
+
+<section>
+    <p></p>
+</section>
+
+<section>
+    <p>
+        <center>
+        <img id="print1" src="./img/postsnadadosrec_print7_jupyterssss.jpg" alt="Jupyter aberto" width="930px"/>
+        </center>
+    </p>
+</section>
+
+<section>
+    <p></p>
+</section>
+
+
+
+
 <section>
     <p>
 - Enquanto estiver executando este trabalho, não feche essa tela de prompt do Jupyter, pois ele funciona a partir dela. Pode minimizar.
@@ -549,7 +692,7 @@ Dica: tente sempre usar o underline "_" para separar as palavras no nome de uma 
 
 <section>
     <p>
-- Na pasta escolhida, abra um novo arquivo clicando em New > Python 3 (este arquivo é chamado também de Notebook, ou seja, um arquivo que você digita o seu código). Automaticamente irá abrir uma nova página do Jupyter no seu navegador, sendo este um notebook para escrevermos o nosso código de input.
+- Na pasta escolhida, abra um novo arquivo com nome "sna_dados_rec", clicando em New > Python 3 (este arquivo é chamado também de Notebook, ou seja, um arquivo que você digita o seu código). Automaticamente irá abrir uma nova página do Jupyter no seu navegador, sendo este um notebook para escrevermos o nosso código de input.
 </p>
 </section>
 
@@ -606,6 +749,25 @@ Dica: tente sempre usar o underline "_" para separar as palavras no nome de uma 
 </p>
 </section>
 
+
+<section>
+    <p>
+        <center>
+        <img id="print1" src="./img/postsnadadosrec_print9_jupyter pasta.jpg" alt="Pastas no Jupyter" width="930px"/>
+        </center>
+    </p>
+</section>
+
+<section>
+    <p></p>
+</section>
+
+<section>
+    <p></p>
+</section>
+
+
+
 <section>
     <p>
 - Na página aberta do Jupyter (que está no seu navegador de internet), copie e cole o código abaixo para a única caixa de edição que está aberta.
@@ -625,7 +787,7 @@ from selenium.webdriver.common.alert import Alert
 
 
 import pandas as pd
-tabela = pd.read_excel("planilha.xlsx")
+tabela = pd.read_excel("postsnadadosrec_planilha.xlsx")
 
 for i, numera in enumerate(tabela["Numeraçao"]):
     letra = tabela.loc[i, "Letra"]
@@ -799,18 +961,37 @@ for i, numera in enumerate(tabela["Numeraçao"]):
 </code></pre>
 
 
+<section>
+    <p></p>
+</section>
 
+
+<section>
+    <p></p>
+</section>
 
     <section>
         <p>
-- Clique em Run. Aguarde um pouco e veja que irá abrir automaticamente uma nova janela de navegador, preenchendo automaticamente os dados de recuperação no site do SNA. Deixe rodando e pronto!
+- Clique em Run. Aguarde um pouco e veja que irá abrir automaticamente uma nova janela de navegador, preenchendo automaticamente os dados de recuperação no site do SNA. Deixe rodando e pronto!  🙌🏼🙌🏼
 </p>
 </section>
 
+
+
 <section>
     <p>
+        <center>
+        <img id="print1" src="./img/postsnadadosrec_print10_Run.jpg" alt="Run Jupyter" width="930px"/>
+        </center>
     </p>
 </section>
+
+<section>
+    <p></p>
+</section>
+
+
+
 
 <section>
     <p>
@@ -834,9 +1015,58 @@ Observações:
     <p>
 - Erros mais comuns (e suas soluções): 
 
+<section>
+    <p>
 1) Webdriver não compatível com o seu navegador ou não atualizado na pasta do anaconda (solução: veja o passo 3 e repita cada etapa); 
+</p>
+</section>
+
+<section>
+    <p>
 2) Informações na planilha de dados não padronizada com o arquivo deste tutorial (solução: identifique o nome da coluna que está errada. Você pode fazer isso conferindo todas as colunas do arquivo .xlsx ou confira se há alguma coluna identificada na mensagem de erro do Jupyter)
-3) Conexão ruim ..... 
+</p>
+</section>
+
+<section>
+    <p>
+3) Conexão ruim. Esse problema é um pouco mais chato de ser resolvido, mas tudo bem. 
+
+    </p>
+</section>
+
+<section>
+    <p>
+Se a sua conexão de internet falhar, o código que está rodando vai ser interrompido. Os dados que já rodaram foram inseridos com sucesso, porém, você não poderá apenas clicar em Run novamente, pois vai acontecer uma duplicata de dados no SNA. Dessa forma, você vai ter que 1) conferir no navegador (janela aberta automaticamente pelo código) qual foi o último número de anilha atualizada (se a 2ª página do SNA não foi confirmada, este número não foi gravado no SNA); 2) crie uma nova planilha a partir deste último número (excluindo as anilhas já gravadas... mas salve o arquivo em outro lugar...) e; 3) clique em Run novamente quando voltar a conexão. Repita este processo, caso interromper a conexão de novo.
+</p>
+</section>
+
+
+<section>
+    <p></p>
+    </section>
+
+    <section>
+        <p></p>
+        </section>
+    
+
+<section>
+    <p></p>
+    </section>
+
+
+<section>
+    <p>
+Bons trabalhos e anilhamentos!
+</p>
+</section>
+
+
+<section>
+    <p>
+🐤🐧🦅🦆🦢🦉🦩🦜
+    </p>
+</section>
 
 
 
@@ -846,10 +1076,9 @@ Observações:
 
 
 
-
-
-
-
+<section>
+    <p></p>
+    </section>
 
 
 

@@ -159,7 +159,12 @@ pre {
 
 code{font-size: 0.80em;}
 
+#pip {font-size: 1.0em;
+background-color: #cdcdcdb2;}
 
+#print1 {
+    border: 1px solid #787878c4;
+}
 
 
 
